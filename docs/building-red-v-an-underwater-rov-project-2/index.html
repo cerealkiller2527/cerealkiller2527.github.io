@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Building Red V: An Underwater ROV Project</title>
+    <link rel="stylesheet" href="../assets/built/screen.css">
+
+
+    <style>
+        :root {
+            --background-color: #ffffff
+        }
+    </style>
+
+    <script>
+        /* The script for calculating the color contrast was taken from
+        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
+        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+        accentColor = accentColor.trim().slice(1);
+        var r = parseInt(accentColor.substr(0, 2), 16);
+        var g = parseInt(accentColor.substr(2, 2), 16);
+        var b = parseInt(accentColor.substr(4, 2), 16);
+        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+        var textColor = (yiq >= 128) ? 'dark' : 'light';
+
+        document.documentElement.className = `has-${textColor}-text`;
+    </script>
+
+    <link rel="icon" href="../content/images/size/w256h256/format/png/2024/08/Untitled-design--1-.svg" type="image/png">
+    <link rel="canonical" href="/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Madhav Lodha">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building Red V: An Underwater ROV Project">
+    <meta property="og:description" content="Phase I: Synthesis - Beep Boop 🤖
+
+After my second season of FIRST Robotics, I was stuck in a creative rut—bored with the same design work and frustrated by endless internal politics. I needed a new challenge that would push me in ways I hadn’t been pushed before.
+
+That’">
+    <meta property="og:url" content="https://cerealkiller2527.github.io/building-red-v-an-underwater-rov-project-2/">
+    <meta property="og:image" content="https://cerealkiller2527.github.io/content/images/2024/08/Untitled--612-x-330-px--2.svg">
+    <meta property="article:published_time" content="2024-08-15T09:28:39.000Z">
+    <meta property="article:modified_time" content="2024-08-15T15:21:58.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building Red V: An Underwater ROV Project">
+    <meta name="twitter:description" content="Phase I: Synthesis - Beep Boop 🤖
+
+After my second season of FIRST Robotics, I was stuck in a creative rut—bored with the same design work and frustrated by endless internal politics. I needed a new challenge that would push me in ways I hadn’t been pushed before.
+
+That’">
+    <meta name="twitter:url" content="https://cerealkiller2527.github.io/building-red-v-an-underwater-rov-project-2/">
+    <meta name="twitter:image" content="https://cerealkiller2527.github.io/content/images/2024/08/Untitled--612-x-330-px--2.svg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Madhav Lodha">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="612">
+    <meta property="og:image:height" content="330">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Madhav Lodha",
+        "url": "https://cerealkiller2527.github.io/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cerealkiller2527.github.io/content/images/size/w256h256/format/png/2024/08/Untitled-design--1-.svg",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Madhav Lodha",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://cerealkiller2527.github.io/content/images/2024/08/Untitled-design-1.svg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "https://cerealkiller2527.github.io/author/madhav/",
+        "sameAs": []
+    },
+    "headline": "Building Red V: An Underwater ROV Project",
+    "url": "https://cerealkiller2527.github.io/building-red-v-an-underwater-rov-project-2/",
+    "datePublished": "2024-08-15T09:28:39.000Z",
+    "dateModified": "2024-08-15T15:21:58.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://cerealkiller2527.github.io/content/images/2024/08/Untitled--612-x-330-px--2.svg",
+        "width": 612,
+        "height": 330
+    },
+    "description": "Phase I: Synthesis - Beep Boop 🤖\n\nAfter my second season of FIRST Robotics, I was stuck in a creative rut—bored with the same design work and frustrated by endless internal politics. I needed a new challenge that would push me in ways I hadn’t been pushed before.\n\nThat’s when I conversed with my mentor, Ming, who was part of the larger SAS Robotics program. We talked about potential summer projects, and when the MATE ROV competition came up, I knew instantly that this was it. I wanted to build ",
+    "mainEntityOfPage": "https://cerealkiller2527.github.io/building-red-v-an-underwater-rov-project-2/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.89">
+    <link rel="alternate" type="application/rss+xml" title="Madhav Lodha" href="../rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="38e5042917920631857097b1ba" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cerealkiller2527.github.io/" crossorigin="anonymous"></script>
+    
+    <link href="https://cerealkiller2527.github.io/webmentions/receive/" rel="webmention">
+    <script defer src="../public/cards.min.js"></script><style>:root {--ghost-accent-color: #000000;}</style>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {delimiters: [
+  {left: '$$', right: '$$', display: true},
+  {left: '%%', right: '%%', display: false}
+]});"></script>
+</head>
+
+<body class="post-template is-head-left-logo has-classic-feed">
+<div class="gh-site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="../">
+                            Madhav Lodha
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+<path d="M17.5 17.5L12.5 12.5L17.5 17.5ZM14.1667 8.33333C14.1667 9.09938 14.0158 9.85792 13.7226 10.5657C13.4295 11.2734 12.9998 11.9164 12.4581 12.4581C11.9164 12.9998 11.2734 13.4295 10.5657 13.7226C9.85792 14.0158 9.09938 14.1667 8.33333 14.1667C7.56729 14.1667 6.80875 14.0158 6.10101 13.7226C5.39328 13.4295 4.75022 12.9998 4.20854 12.4581C3.66687 11.9164 3.23719 11.2734 2.94404 10.5657C2.65088 9.85792 2.5 9.09938 2.5 8.33333C2.5 6.78624 3.11458 5.30251 4.20854 4.20854C5.30251 3.11458 6.78624 2.5 8.33333 2.5C9.88043 2.5 11.3642 3.11458 12.4581 4.20854C13.5521 5.30251 14.1667 6.78624 14.1667 8.33333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="../">Home</a></li>
+    <li class="nav-about"><a href="../about/">About</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+<path d="M17.5 17.5L12.5 12.5L17.5 17.5ZM14.1667 8.33333C14.1667 9.09938 14.0158 9.85792 13.7226 10.5657C13.4295 11.2734 12.9998 11.9164 12.4581 12.4581C11.9164 12.9998 11.2734 13.4295 10.5657 13.7226C9.85792 14.0158 9.09938 14.1667 8.33333 14.1667C7.56729 14.1667 6.80875 14.0158 6.10101 13.7226C5.39328 13.4295 4.75022 12.9998 4.20854 12.4581C3.66687 11.9164 3.23719 11.2734 2.94404 10.5657C2.65088 9.85792 2.5 9.09938 2.5 8.33333C2.5 6.78624 3.11458 5.30251 4.20854 4.20854C5.30251 3.11458 6.78624 2.5 8.33333 2.5C9.88043 2.5 11.3642 3.11458 12.4581 4.20854C13.5521 5.30251 14.1667 6.78624 14.1667 8.33333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+            </div>
+        </div>
+    </header>
+
+    
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+            <article class="gh-article post">
+                    <header class="gh-article-header gh-canvas">
+                        <h1 class="gh-article-title">Building Red V: An Underwater ROV Project</h1>
+                            <figure class="gh-article-image">
+        <img
+            srcset="../content/images/size/w300/2024/08/Untitled--612-x-330-px--2.svg 300w,
+                   ../content/images/size/w720/2024/08/Untitled--612-x-330-px--2.svgg 720w,
+                  ../content/images/size/w960/2024/08/Untitled--612-x-330-px--2.svgvg 960w,
+                 ../content/images/size/w1200/2024/08/Untitled--612-x-330-px--2.svgsvg 1200w,
+                ../content/images/size/w2000/2024/08/Untitled--612-x-330-px--2.svg.svg 2000w,
+               ../content/images/size/w2000/2024/08/Untitled--612-x-330-px--2.svg2.svg"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            src="../content/images/size/w1200/2024/08/Untitled--612-x-330-px--2.svg"
+            alt="Building Red V: An Underwater ROV Project"
+        >
+    </figure>
+                    </header>
+
+                <section class="gh-content gh-canvas">
+                    <h1 id="phase-i-synthesisbeep-boop-%F0%9F%A4%96">Phase I: Synthesis - Beep Boop 🤖</h1><p>After my second season of FIRST Robotics, I was stuck in a creative rut—bored with the same design work and frustrated by endless internal politics. I needed a new challenge that would push me in ways I hadn’t been pushed before.</p><p>That’s when I conversed with my mentor, Ming, who was part of the larger SAS Robotics program. We talked about potential summer projects, and when the MATE ROV competition came up, I knew instantly that this was it. I wanted to build something that would push us beyond what we thought possible.</p><p>Two months later, I had a team ready to take on the challenge. With our FRC experience, I thought it would be smooth sailing. I was wrong. This wasn’t going to be easy—it would test everything we knew.</p><p>And so began the journey of RED V—a journey that would stretch our limits, push our capabilities, and teach us more than we ever expected.</p><h1 id="phase-ii-think-think-think">Phase II: Think! Think! Think!</h1><p>Procrastination hit us hard. What was supposed to be a well-paced design process turned into a mad dash as deadlines loomed. With time running out, I locked myself in my room, determined to bring order to the chaos. I dove into the MATE ROV rulebook, searching for a way to simplify our approach. After days of intense focus, I distilled our strategy into three guiding principles: modularity, adaptability, and simplicity.</p><div class="kg-card kg-toggle-card" data-kg-toggle-state="close">
+            <div class="kg-toggle-heading">
+                <h4 class="kg-toggle-heading-text"><span style="white-space: pre-wrap;">3 Principles- Why?</span></h4>
+                <button class="kg-toggle-card-icon" aria-label="Expand toggle to read content">
+                    <svg id="Regular" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="cls-1" d="M23.25,7.311,12.53,18.03a.749.749,0,0,1-1.06,0L.75,7.311"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="kg-toggle-content"><ol><li value="1"><b><strong style="white-space: pre-wrap;">Modularity</strong></b><span style="white-space: pre-wrap;"> meant every part of RED V could be swapped or adjusted with minimal effort. We needed the flexibility to fix issues quickly, knowing things would inevitably go wrong. </span></li><li value="2"><b><strong style="white-space: pre-wrap;">Adaptability</strong></b><span style="white-space: pre-wrap;"> ensured our ROV could handle various tasks without requiring major changes, making it versatile enough for the unpredictable underwater environment. </span></li><li value="3"><span style="white-space: pre-wrap;">Finally, </span><b><strong style="white-space: pre-wrap;">simplicity</strong></b><span style="white-space: pre-wrap;"> was crucial—our design had to be straightforward and functional, avoiding unnecessary complexity that could trip us up.</span></li></ol></div>
+        </div><p>With these principles in mind, I spent a week CAD designing the entire robot. It was a race against time, balancing the need for precision with the urgency of our deadline. My team, eager but inexperienced, took on the basic tasks, allowing me to focus on the critical decisions. Their support kept us moving, even as the pressure mounted.</p><p>Despite the challenges, we emerged with a solid plan. The design was complete, and we were ready to move on to the next phase: building RED V. The toughest part was still ahead, but we had a clear direction—and that was enough to keep us going.</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-emoji">😱</div><div class="kg-callout-text">Storytelling is done - now the technical details ☠️</div></div><h2 id="21-robot-specifications">2.1 Robot Specifications</h2><p>RED V is a compact ROV, measuring 47.5 cm x 34 cm x 32.5 cm and weighing 6.2 kg with the tether. Its sturdy aluminium frame makes it easy to adjust and repair. With six thrusters, RED V moves smoothly and precisely. The electronics are protected in a waterproof box, ensuring everything works underwater. I Designed to be simple and adaptable, RED V is ready to destroy the competition (or so I thought).</p><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/ORCA-Robotics---MATE-Technical-Documentation.svg" class="kg-image" alt="" loading="lazy" width="656" height="261"></figure><h2 id="22-frame">2.2 Frame</h2><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/Untitled-design--2-.svg" class="kg-image" alt="" loading="lazy" width="612" height="330"></figure><p>Using the fewest thrusters possible, I aimed to achieve superior thrust vector control with six degrees of freedom. Initially, we explored complex shapes like octagons and dodecahedrons, but these proved too complicated to build and program. After multiple iterations, I found that a cuboid was the most straightforward and space-efficient design.</p><p>The decision to use 20x20 mm T-slot aluminium rails, inspired by our 3D printer, provided the perfect balance of lightness and strength. This modular design allowed us to easily swap out components, adjust positions, and optimize the robot as needed.</p><p>This choice paid off when I used robust, cost-effective 90-degree steel plates, enabling us to assemble the frame in under 30 minutes. The modular setup also made it easy to add 3D-printed legs to reduce stress on the manipulator and bottom camera and adjust buoyancy late in the season.</p><h2 id="23-manipulator">2.3 Manipulator</h2><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/Screenshot-2024-08-15-181736-1.png" class="kg-image" alt="" loading="lazy" width="1983" height="764" srcset="../content/images/size/w600/2024/08/Screenshot-2024-08-15-181736-1.png 600w, ../content/images/size/w1000/2024/08/Screenshot-2024-08-15-181736-1.png 1000w, ../content/images/size/w1600/2024/08/Screenshot-2024-08-15-181736-1.png 1600w, ../content/images/2024/08/Screenshot-2024-08-15-181736-1.png 1983w" sizes="(min-width: 720px) 720px"></figure><p>Early on, I recognized that a reliable manipulator was crucial, as it’s the only component directly interacting with the props. Due to limited time and the challenges of prototyping a new claw design, I drew inspiration from the well-established Blue Robotics subsea gripper. However, I made key adaptations, incorporating 3D-printed parts and aluminium CNC plates secured with screws and threaded inserts to enhance durability and simplify repairs.</p><p>While I initially considered using a lead screw design similar to Blue Robotics, I ultimately chose a slider-crank mechanism powered by an affordable waterproof servo (LW-25MG) for its ease of waterproofing and assembly. To add versatility, I integrated a second LW-25MG servo with a gear system to rotate the gripper. This allowed the claw to adjust angles for different tasks—vertical for inter-ray cable work and horizontal for seagrass pruning. To improve grip, I lined the manipulator’s edges with rubber tape.</p><p>The LW-25MG servo, with its high torque of 25 kg and built-in waterproofing, was ideal for quickly and reliably operating the claw. This setup ensured the manipulator could handle various tasks without losing grip. Ultimately, I built a functional and cost-effective claw for $143.68, which offers more functionality at a fraction of the cost of the Newton Subsea Gripper ($590).</p><h2 id="24-buoyancy-system">2.4 Buoyancy System</h2><h2 id=""></h2><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/Untitled-design--3-.svg" class="kg-image" alt="" loading="lazy" width="612" height="330"></figure><p>Achieving neutral buoyancy was crucial for RED V to maintain stable and precise control underwater. The buoyancy system was designed using PVC pipes with a 63 mm outer diameter, chosen for their consistent buoyant force across varying depths and ease of mounting.</p><div class="kg-card kg-toggle-card" data-kg-toggle-state="close">
+            <div class="kg-toggle-heading">
+                <h4 class="kg-toggle-heading-text"><span style="white-space: pre-wrap;">Calculating Gravitational Force</span></h4>
+                <button class="kg-toggle-card-icon" aria-label="Expand toggle to read content">
+                    <svg id="Regular" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="cls-1" d="M23.25,7.311,12.53,18.03a.749.749,0,0,1-1.06,0L.75,7.311"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="kg-toggle-content"><p><span style="white-space: pre-wrap;">The gravitational force acting on the ROV %%( F_g )%% is calculated as:</span></p><p><span style="white-space: pre-wrap;">$$F_g = m \times g$$</span></p><p><span style="white-space: pre-wrap;">Where:</span></p><ul><li value="1"><span style="white-space: pre-wrap;">%%m%% is the mass of the ROV, which is %%5.2 kg%%,</span></li><li value="2"><span style="white-space: pre-wrap;">%%g%% is the acceleration due to gravity %%( 9.81\text{m/s}^2 )%%.</span></li></ul><p><span style="white-space: pre-wrap;">So,</span></p><p><span style="white-space: pre-wrap;">$$F_g = 5.2\text{kg} \times 9.81\text{m/s}^2 = 51.012\text{N}$$</span></p><p><span style="white-space: pre-wrap;">This gravitational force pulls the ROV downward.</span></p></div>
+        </div><div class="kg-card kg-toggle-card" data-kg-toggle-state="close">
+            <div class="kg-toggle-heading">
+                <h4 class="kg-toggle-heading-text"><span style="white-space: pre-wrap;">Calculating Buoyant Force</span></h4>
+                <button class="kg-toggle-card-icon" aria-label="Expand toggle to read content">
+                    <svg id="Regular" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="cls-1" d="M23.25,7.311,12.53,18.03a.749.749,0,0,1-1.06,0L.75,7.311"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="kg-toggle-content"><p><span style="white-space: pre-wrap;">The buoyant force %%( F_b )%% acting on the ROV, which counteracts the gravitational force, is determined using the equation:</span></p><p><span style="white-space: pre-wrap;">$$F_b = \rho \times V \times g$$</span></p><p><span style="white-space: pre-wrap;">Where:</span></p><ul><li value="1"><span style="white-space: pre-wrap;">%%\rho%% is the density of water %%( 1000\text{kg/m}^3 )%%,</span></li><li value="2"><span style="white-space: pre-wrap;">%%V%% is the volume of air in the PVC pipes,</span></li><li value="3"><span style="white-space: pre-wrap;">%%g%% is the acceleration due to gravity %%( 9.81\text{m/s}^2 )%%.</span></li></ul><p><span style="white-space: pre-wrap;">The volume %%( V )%% of air in the PVC pipes is calculated by:</span></p><p><span style="white-space: pre-wrap;">$$V = \pi \times (r^2) \times L$$</span></p><p><span style="white-space: pre-wrap;">Where:</span></p><ul><li value="1"><span style="white-space: pre-wrap;">%%r%% is the inner radius of the PVC pipe, %%( 30 \times 10^{-3}\text{m} )%%,</span></li><li value="2"><span style="white-space: pre-wrap;">%%L%% is the length of the pipe.</span></li></ul><p><span style="white-space: pre-wrap;">Substituting the values:</span></p><p><span style="white-space: pre-wrap;">$$F_b = 1000 \times \left(\pi \times \left(30 \times 10^{-3}\right)^2 \times 0.92\right) \times 9.81 = 8.12\pi \times 9.81$$ </span></p><p><span style="white-space: pre-wrap;">$$\approx 25.5\text{N}$$</span></p><p><span style="white-space: pre-wrap;">This buoyant force acts upward, counteracting the gravitational force.</span></p></div>
+        </div><h4 id="adjusting-buoyancy"><strong>Adjusting Buoyancy</strong></h4><p>Initially, the buoyant force was insufficient to fully counteract the gravitational force, leading to the need to fine-tune the PVC pipe length. After testing, the required length of PVC was adjusted to 22 cm to achieve neutral buoyancy.</p><div class="kg-card kg-toggle-card" data-kg-toggle-state="close">
+            <div class="kg-toggle-heading">
+                <h4 class="kg-toggle-heading-text"><span style="white-space: pre-wrap;">Adjusting Buoyancy Calculation</span></h4>
+                <button class="kg-toggle-card-icon" aria-label="Expand toggle to read content">
+                    <svg id="Regular" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path class="cls-1" d="M23.25,7.311,12.53,18.03a.749.749,0,0,1-1.06,0L.75,7.311"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="kg-toggle-content"><p><span style="white-space: pre-wrap;">However, during real-life testing, additional weights were added to the ROV. To maintain neutral buoyancy, I calculated the length of PVC to remove:</span></p><p><span style="white-space: pre-wrap;">$$\text{Length Of PVC to Remove} = \frac{\text{Mass of Weights Added to the ROV}}{\rho \times \text{Area of PVC}}$$</span></p><p><span style="white-space: pre-wrap;">Where:</span></p><ul><li value="1"><span style="white-space: pre-wrap;">The mass of the weights added was %%1.94 kg%%,</span></li><li value="2"><span style="white-space: pre-wrap;">The area of the PVC pipe cross-section is calculated as %%\pi \times (30 \times 10^{-3})^2%%.</span></li></ul><p><span style="white-space: pre-wrap;">Substituting the values:</span></p><p><span style="white-space: pre-wrap;">$$\text{Length Of PVC to Remove} = \frac{1.94}{1000 \times \pi \times \left(30 \times 10^{-3}\right)^2} \approx 70\text{cm}$$</span></p></div>
+        </div><p>This adjustment ensured that the ROV remained neutrally buoyant.</p><h4 id="practical-adjustments"><strong>Practical Adjustments</strong></h4><p>To counterbalance the added weight of the manipulator at the front of the ROV, smaller PVC pipes with a 23 mm outer diameter were added. This prevented the ROV from tilting forward, keeping it level and stable during operation.</p><p>The PVC pipes were mounted using custom CNC plates and locally purchased angular gussets, allowing for easy adjustments and repositioning as needed. This setup also allowed the buoyancy tubes to pivot out of the way for quick access to the electronics and repairs.</p><p>By carefully calculating and adjusting the buoyancy system, RED V maintained neutral buoyancy, enhancing its manoeuvrability and stability in the water.</p><h2 id="25-propulsion">2.5 Propulsion</h2><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/Untitled-design--4-.svg" class="kg-image" alt="" loading="lazy" width="612" height="330"></figure><p>RED V is powered by six T-60 thrusters strategically arranged to provide optimal thrust vector control with six degrees of freedom. The propulsion system was carefully designed to ensure precise and intuitive manoeuvrability.</p><figure class="kg-card kg-image-card"><img src="../content/images/2024/08/Untitled-design--6-.svg" class="kg-image" alt="" loading="lazy" width="612" height="330"></figure><h4 id="thruster-arrangement"><strong>Thruster Arrangement</strong></h4><p>The propulsion system features four T-60 thrusters positioned at 45-degree angles within the cuboidal frame, forming an X-shaped configuration. This setup allows RED V to move forward and backwards and translate left and right efficiently. Additionally, parallel to the ROV, two thrusters are mounted on opposite sides of the frame to control vertical movement and provide fine adjustments to pitch and roll.</p><p>This X-shaped configuration was selected for its ability to maximize degrees of freedom while minimizing the number of thrusters. This balances power requirements and keeps the system cost-effective. The load is evenly distributed among the four primary thrusters, ensuring stability and smooth control during complex manoeuvres.</p><div class="kg-card kg-callout-card kg-callout-card-red"><div class="kg-callout-emoji">🚨</div><div class="kg-callout-text"><b><strong style="white-space: pre-wrap;">Pitch Control and Software Integration</strong></b><br>While the X-shaped thruster configuration provides excellent control, it does have limited pitch control. To address this, a gyroscope was integrated into the ROV's software, allowing for fine-tuned adjustments to maintain balance. Combined with the carefully calibrated buoyancy system, this setup ensures that RED V remains stable and precise in all its movements.</div></div><h4 id="thrust-capabilities"><strong>Thrust Capabilities</strong></h4><p>Each T-60 thruster generates 1.65 kg of thrust, sufficient to meet the competition's requirements, including lifting a maximum load of 1 kg. The choice of T-60 thrusters ($50) over the more expensive Blue Robotics T200 thrusters ($200) was made to maintain cost-effectiveness without compromising performance. The T-60 thrusters are also more compact, making them an ideal fit for RED V's design.</p><h4 id="mounting-and-modularity"><strong>Mounting and Modularity</strong></h4><p>The thrusters are mounted using 3D-printed brackets that slide into the T-slot aluminium frame. This modular design allows for quick and easy replacements or adjustments, ensuring issues can be resolved swiftly with minimal downtime. Replacing a thruster in minutes is critical in maintaining operational readiness during competition.</p>
+                    <aside class="gh-article-meta">
+                        <div class="gh-article-meta-inner">
+                                    <figure class="gh-author-image">
+                                        <img src="../content/images/size/w300/2024/08/Untitled-design-1.svg" alt="Madhav Lodha">
+                                    </figure>
+                                <div class="gh-article-meta-wrapper">
+                                <h4 class="gh-author-name">
+                                    <a href="../author/madhav/">Madhav Lodha</a>
+                                </h4>
+                            <time class="gh-article-date" datetime="2024-08-15">Aug 15, 2024</time></div>
+                        </div>
+                    </aside>
+                </section>
+
+
+                <footer class="gh-article-footer gh-canvas">
+                    <nav class="gh-navigation">
+                        <div class="gh-navigation-previous">
+                        </div>
+
+                        <div class="gh-navigation-middle"></div>
+
+                        <div class="gh-navigation-next">
+                        </div>
+                    </nav>
+                </footer>
+            </article>
+    </div>
+</main>
+
+    <footer class="gh-foot gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <nav class="gh-foot-menu">
+                <ul class="nav">
+    <li class="nav-sign-up"><a href="/#/portal/">Sign up</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-copyright">
+                    Madhav Lodha © 2024
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/built/main.min.js"></script>
+
+
+
+</body>
+
+</html>
