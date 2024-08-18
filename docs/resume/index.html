@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume</title>
+    <link rel="stylesheet" href="../assets/built/screen.css?v=ee3d288b5b">
+
+
+    <style>
+        :root {
+            --background-color: #ffffff
+        }
+    </style>
+
+    <script>
+        /* The script for calculating the color contrast was taken from
+        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
+        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+        accentColor = accentColor.trim().slice(1);
+        var r = parseInt(accentColor.substr(0, 2), 16);
+        var g = parseInt(accentColor.substr(2, 2), 16);
+        var b = parseInt(accentColor.substr(4, 2), 16);
+        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+        var textColor = (yiq >= 128) ? 'dark' : 'light';
+
+        document.documentElement.className = has-${textColor}-text;
+    </script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+
+    <link rel="icon" href="../content/images/size/w256h256/format/png/2024/08/Untitled-design--1--2.svg" type="image/png">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Madhav Lodha">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resume">
+    <meta property="og:description" content="Madhav Lodha Master ResumeMadhav Lodha Master Resume.pdf135 KBdownload-circle">
+    <meta property="og:url" content="http://madhavlodha.com/resume/">
+    <meta property="og:image" content="http://madhavlodha.com/content/images/2024/08/Untitled-design--1--5.png">
+    <meta property="article:published_time" content="2024-08-16T08:01:48.000Z">
+    <meta property="article:modified_time" content="2024-08-16T08:20:24.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resume">
+    <meta name="twitter:description" content="Madhav Lodha Master ResumeMadhav Lodha Master Resume.pdf135 KBdownload-circle">
+    <meta name="twitter:url" content="http://madhavlodha.com/resume/">
+    <meta name="twitter:image" content="http://madhavlodha.com/content/images/2024/08/Untitled-design--1--5.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Madhav Lodha">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="613">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Madhav Lodha",
+        "url": "http://madhavlodha.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://madhavlodha.com/content/images/size/w256h256/format/png/2024/08/Untitled-design--1--2.svg"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Madhav Lodha",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://madhavlodha.com/content/images/2024/08/Untitled-design-1.svg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "http://madhavlodha.com/author/madhav/",
+        "sameAs": []
+    },
+    "headline": "Resume",
+    "url": "http://madhavlodha.com/resume/",
+    "datePublished": "2024-08-16T08:01:48.000Z",
+    "dateModified": "2024-08-16T08:20:24.000Z",
+    "description": "\n\n\n\n\n\n\n\nMadhav Lodha Master ResumeMadhav Lodha Master Resume.pdf135 KBdownload-circle",
+    "mainEntityOfPage": "http://madhavlodha.com/resume/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.89">
+    <link rel="alternate" type="application/rss+xml" title="Madhav Lodha" href="../rss/index.html">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="38e5042917920631857097b1ba" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="http://madhavlodha.com/" crossorigin="anonymous"></script>
+    
+    <link href="http://madhavlodha.com/webmentions/receive/" rel="webmention">
+    <script defer src="../public/cards.min.js?v=ee3d288b5b"></script><style>:root {--ghost-accent-color: #000000;}</style>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css?v=ee3d288b5b">
+    <style>
+/* Navbar styling with a pronounced floating effect */
+.gh-head-inner {
+    border-radius: 14px; /* Rounded edges */
+    padding: 10px 40px; /* Space on left and right for wider rectangle */
+    box-shadow: 0 4px 35px rgba(0, 0, 0, 0.25); /* Pronounced floating effect with shadow */
+    position: relative; /* Positioning for floating items */
+}
+
+/* Shift the navbar down and adjust spacing */
+.gh-head {
+    padding-top: 30px; /* Reduced space from the top of the page */
+    padding-bottom: 0px; /* Space from the bottom of the header */
+    padding-left: 30px; /* Space from the left side of the page */
+    padding-right: 30px; /* Space from the right side of the page */
+}
+
+/* Adjust spacing for the logo and search button */
+.gh-head-logo {
+    margin-left: 0px; /* Reduced space between the logo and the left edge */
+}
+
+.gh-search {
+    margin-left: 0px; /* Space between the search icon and menu items */
+    margin-right: 0px; /* Reduced space between the search icon and the right edge */
+}
+
+/* Align the navigation menu to the right */
+.gh-head-menu {
+    text-align: right; /* Align navigation menu to the right */
+}
+
+/* Force increased space between navbar and the about section */
+.gh-about {
+    margin-top: 140px !important; /* Increase space between navbar and about section */
+}
+
+/* Blog post card styling with a floating effect */
+.gh-card {
+    border-radius: 30px; /* Rounded edges for the blog post cards */
+    padding: 50px; /* Padding inside the card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Floating effect with shadow */
+    margin-bottom: 20px; /* Space between blog post cards */
+}
+
+/* Style for the Featured Projects heading */
+.gh-featured-projects h1 {
+    text-align: center; /* Center the text horizontally */
+    font-size: 3em; /* Increase font size to make it even larger */
+    font-weight: 900; /* Bold the text */
+    margin-top: 3sky5px; /* Adjusted space above the heading */
+    margin-bottom: 50px; /* Maintain space below the heading */
+    color: #000; /* Matching color with the theme */
+    font-family: inherit; /* Use the same font as the rest of the site */
+    letter-spacing: 0px; /* Slightly increase letter spacing */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .gh-head-inner {
+        padding: 0px 30px; /* Reduce padding on smaller screens */
+        box-shadow: none; /* Remove the shadow */
+        border-radius: 0; /* Remove the rounded edges */
+    }
+    .gh-card {
+        box-shadow: none; /* Remove the shadow */
+        border-radius: 0; /* Remove the rounded edges */
+        padding: 10px; /* Reduce padding for better fit on small screens */
+    }
+    .gh-about {
+        margin-top: 80px !important; /* Adjust space for smaller screens */
+    }
+    .gh-featured-projects h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+        margin-top: 0px;
+    }
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Create the "Featured Projects" section
+        var featuredProjects = document.createElement('section');
+        featuredProjects.className = 'gh-featured-projects';
+        featuredProjects.innerHTML = '<h1>Featured Projects</h1>';
+
+        // Find the ROV project card and insert the "Featured Projects" section before it
+        var rovProjectCard = document.querySelector('.gh-feed .gh-card');
+        if (rovProjectCard) {
+            rovProjectCard.parentNode.insertBefore(featuredProjects, rovProjectCard);
+        }
+    });
+</script>
+</head>
+
+<body class="page-template page-resume is-head-left-logo has-classic-feed">
+<div class="gh-site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="../index.html">
+                            Madhav Lodha
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.5 17.5L12.5 12.5L17.5 17.5ZM14.1667 8.33333C14.1667 9.09938 14.0158 9.85792 13.7226 10.5657C13.4295 11.2734 12.9998 11.9164 12.4581 12.4581C11.9164 12.9998 11.2734 13.4295 10.5657 13.7226C9.85792 14.0158 9.09938 14.1667 8.33333 14.1667C7.56729 14.1667 6.80875 14.0158 6.10101 13.7226C5.39328 13.4295 4.75022 12.9998 4.20854 12.4581C3.66687 11.9164 3.23719 11.2734 2.94404 10.5657C2.65088 9.85792 2.5 9.09938 2.5 8.33333C2.5 6.78624 3.11458 5.30251 4.20854 4.20854C5.30251 3.11458 6.78624 2.5 8.33333 2.5C9.88043 2.5 11.3642 3.11458 12.4581 4.20854C13.5521 5.30251 14.1667 6.78624 14.1667 8.33333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-about"><a href="../about/index.html">About</a></li>
+    <li class="nav-posts"><a href="../posts/index.html">Posts</a></li>
+    <li class="nav-resume nav-current"><a href="index.html">Resume</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.5 17.5L12.5 12.5L17.5 17.5ZM14.1667 8.33333C14.1667 9.09938 14.0158 9.85792 13.7226 10.5657C13.4295 11.2734 12.9998 11.9164 12.4581 12.4581C11.9164 12.9998 11.2734 13.4295 10.5657 13.7226C9.85792 14.0158 9.09938 14.1667 8.33333 14.1667C7.56729 14.1667 6.80875 14.0158 6.10101 13.7226C5.39328 13.4295 4.75022 12.9998 4.20854 12.4581C3.66687 11.9164 3.23719 11.2734 2.94404 10.5657C2.65088 9.85792 2.5 9.09938 2.5 8.33333C2.5 6.78624 3.11458 5.30251 4.20854 4.20854C5.30251 3.11458 6.78624 2.5 8.33333 2.5C9.88043 2.5 11.3642 3.11458 12.4581 4.20854C13.5521 5.30251 14.1667 6.78624 14.1667 8.33333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+            </div>
+        </div>
+    </header>
+
+    
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+        <article class="gh-article post no-image">
+                <header class="gh-article-header gh-canvas">
+                    <h1 class="gh-article-title">Resume</h1>
+                                    </header>
+
+            <section class="gh-content gh-canvas">
+                
+<!--kg-card-begin: html-->
+<div style="width: 100%; max-width: 1500px; margin: 20px auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+    <iframe src="https://onedrive.live.com/embed?resid=c2682b02458a9d5f%21139829&authkey=!AIZ-VL1rqB_N0HE&em=2" 
+            style="width: 100%; height: 800px; border: none;" 
+            frameborder="0" 
+            scrolling="yes">
+    </iframe>
+</div>
+
+<!--kg-card-end: html-->
+<div class="kg-card kg-file-card"><a class="kg-file-card-container" href="../content/files/2024/08/Madhav-Lodha-Master-Resume.pdf" title="Download" download=""><div class="kg-file-card-contents"><div class="kg-file-card-title">Madhav Lodha Master Resume</div><div class="kg-file-card-caption"></div><div class="kg-file-card-metadata"><div class="kg-file-card-filename">Madhav Lodha Master Resume.pdf</div><div class="kg-file-card-filesize">135 KB</div></div></div><div class="kg-file-card-icon"><svg viewBox="0 0 24 24"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>download-circle</title><polyline class="a" points="8.25 14.25 12 18 15.75 14.25"></polyline><line class="a" x1="12" y1="6.75" x2="12" y2="18"></line><circle class="a" cx="12" cy="12" r="11.25"></circle></svg></div></a></div>
+            </section>
+        </article>
+    </div>
+</main>
+
+
+
+    <footer class="gh-foot gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <nav class="gh-foot-menu">
+                
+            </nav>
+
+            <div class="gh-copyright">
+                    Madhav Lodha © 2024
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/built/main.min.js?v=ee3d288b5b"></script>
+
+<style>
+/* Hide the Sign up text in the footer */
+.gh-foot-menu {
+    display: none; /* Hide the entire menu containing the Sign up link */
+}
+
+/* Move the Madhav Lodha © 2024 text to the center of the footer */
+.gh-copyright {
+    text-align: center; /* Center the text horizontally */
+    margin: 0 auto; /* Center the text within the footer */
+    padding-top: 20px; /* Add some padding at the top for spacing */
+}
+</style>
+
+</body>
+
+</html>
